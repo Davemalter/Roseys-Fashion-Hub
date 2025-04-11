@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosey's Closet | Tailoring Services</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffafc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: black;
+      color: #fff;
+      padding: 1.5rem 1rem;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .header-text h1 {
+      font-size: 1.8rem;
+    }
+
+    .header-text p {
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: grey;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #f0e1f2;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .hero button {
+      background: black;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .services,
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service,
+    .gallery-item {
+      background: #f0e1f2;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .contact {
+      background: #f7eafc;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    form button {
+      background: grey;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: black;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+
+      .hero p,
+      .service p,
+      .gallery-item p {
+        font-size: 0.95rem;
+      }
+
+      form input,
+      form textarea {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="header-container">
+      <img src="rose.jpg" alt="Rosey's Closet Icon" class="logo" />
+      <div class="header-text">
+        <h1>Rosey's Closet</h1>
+        <p>Tailored to Fit. Made with Love.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="galary.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>We Sew Dreams Into Reality</h2>
+    <p>Top-notch tailoring for every occasion — weddings, casuals, office, and more.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+      Book Now
+    </button>
+  </section>
+
+  <section id="services">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Custom Tailoring</h3>
+        <p>We create clothes that fit you perfectly from scratch.</p>
+      </div>
+      <div class="service">
+        <h3>Alterations</h3>
+        <p>Need adjustments? We’ll fix your clothes like new.</p>
+      </div>
+      <div class="service">
+        <h3>Uniform & Office Wear</h3>
+        <p>Corporate, school, and official wear tailored neatly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Our Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="ds.jpg" alt="Beautiful Ankara Styles">
+        <p>Beautiful Ankara Styles</p>
+      </div>
+      <div class="gallery-item">
+        <img src="wed.jpg" alt="Wedding Gowns">
+        <p>Elegant Wedding Gowns</p>
+      </div>
+      <div class="gallery-item">
+        <img src="corporate.jpg" alt="Corporate Outfits">
+        <p>Smart Corporate Outfits</p>
+      </div>
+      <div class="gallery-item">
+        <img src="house.jpg" alt="Detailed Craftsmanship">
+        <p>Detailed Craftsmanship</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Send us a message for bookings or inquiries</p>
+    <form method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Rosey's Closet. All rights reserved.
+  </footer>
+</body>
+</html>

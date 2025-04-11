@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f8f8f8;
+      text-align: center;
+    }
+
+    header {
+      background: black;
+      color: #fff;
+      padding: 1.5rem 1rem;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: grey;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #f0e1f2;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .contact {
+      margin-top: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+    }
+
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #0077ff;
+    }
+
+    .social-links img {
+      width: 20px;
+      height: 20px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 15px;
+      background: #222;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+        padding: 0.5rem;
+      }
+
+      .header-container {
+        flex-direction: column;
+      }
+
+      .social-links {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <img src="rose.jpg" alt="Rosey's Closet Icon" class="logo" />
+      <div>
+        <h1>Rosey's Closet</h1>
+        <p>Tailored to Fit. Made with Love.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="service.html">Services</a>
+    <a href="galary.html">Gallery</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section class="contact">
+      <h2>Get in Touch</h2>
+      <form id="contactForm" action="process_form.php" method="POST" onsubmit="return validateForm()">
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
+        <input type="email" name="email" id="email" placeholder="Your Email" required />
+        <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+        <div id="errorMessage" class="error-message"></div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <section class="social-links">
+      <h3>Connect With Us</h3>
+      <a href="tel:+2347087509550" target="_blank">📞 Call Us: +234 708 750 9550</a>
+      <a href="https://wa.me/2347087509550" target="_blank" style="display:inline-flex;align-items:center;text-decoration:none;color:#25D366;font-weight:bold;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:24px;height:24px;margin-right:8px;">
+        Chat with us on WhatsApp
+      </a>
+      
+      <a href="https://www.facebook.com/bassey.rosemary.10" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" /> Facebook
+      </a>
+      <a href="https://instagram.com/roseytoney" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" /> Instagram
+      </a>
+    </section>
+  </div>
+
+  <footer>&copy; 2025 Tailoring Services. All rights reserved.</footer>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (!name || !email || !message) {
+        errorMessage.textContent = "Please fill out all fields.";
+        return false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        errorMessage.textContent = "Please enter a valid email.";
+        return false;
+      }
+
+      errorMessage.textContent = "";
+      return true;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us </title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+      background: black;
+      color: #fff;
+      padding: 1.5rem 1rem;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+        nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background: grey;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #f0e1f2;
+    }
+        .container {
+            padding: 2rem;
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+       
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                text-align: center;
+                padding: 0.5rem;
+            }
+            .about-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+</head>
+<body onload="brython()">
+    <header>
+        <div class="header-container">
+          <img src="rose.jpg" alt="Rosey's Closet Icon" class="logo" />
+          <div class="header-text">
+            <h1>Rosey's Closet</h1>
+            <p>Tailored to Fit. Made with Love.</p>
+          </div>
+        </div>
+      </header>
+    
+    <nav class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="service.html">Services</a>
+        <a href="galary.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    
+    <div class="container">
+        <section class="about-section">
+            <div class="about-text">
+                <h2>Our Story</h2>
+                <p>Welcome to our tailoring services, where tradition meets modern fashion. With over two decades of experience, we specialize in creating bespoke garments that perfectly fit your style and preferences.</p>
+                <h2>Our Mission</h2>
+                <p>Our mission is to provide high-quality, custom-tailored clothing that enhances your confidence and showcases your individuality. We are committed to excellence and attention to detail in every stitch.</p>
+            </div>
+            <div class="about-image">
+               
+                <img src="fine.jpg">
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Tailoring Services. All rights reserved.</p>
+    </footer>
+    <script type="text/python">
+        from browser import document
+
+        def show_message(event):
+            document["about-text"].text = "Thank you for visiting our About page!"
+
+        document["about-text"].bind("mouseover", show_message)
+    </script>
+</body>
+</html>
